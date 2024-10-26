@@ -14,14 +14,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Eko199/Jenkins-Exercises.git'
             }
         }
-        stage('Set up .NET Core') {
-            steps {
-                bat '''
-                echo Installing .NET SDK 8.0
-                choco install dotnet-sdk -y --version=8.0.400
-                '''
-            }
-        }
+        // stage('Set up .NET Core') {
+        //     steps {
+        //         bat '''
+        //         echo Installing .NET SDK 8.0
+        //         choco install dotnet-sdk -y --version=8.0.400
+        //         '''
+        //     }
+        // }
         stage('Restore dependencies') {
             steps {
                 bat 'dotnet restore SeleniumIde.sln'
