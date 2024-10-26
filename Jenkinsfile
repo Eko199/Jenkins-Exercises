@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                bat 'dotnet test SleniumIde.sln --loger "trx;LogFileName=TestResult.trx"'
+                bat 'dotnet test SleniumIde.sln --logger "trx;LogFileName=TestResult.trx"'
             }
         }
     }
