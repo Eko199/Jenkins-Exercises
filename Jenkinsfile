@@ -9,10 +9,14 @@ pipeline {
         stage('Test') {
             parallel {
                 stage('Run audit tests') {
-                    bat 'npm audit'
+                    steps {
+                        bat 'npm audit'
+                    }
                 }
                 stage('Run tests') {
-                    bat 'npm test'
+                    steps {
+                        bat 'npm test'
+                    }
                 }
             }
         }
