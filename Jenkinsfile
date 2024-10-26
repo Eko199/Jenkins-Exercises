@@ -1,18 +1,18 @@
-pipeline{
+pipeline {
     agent any
     stages {
-        stage("Install dependencies") {
+        stage('Install dependencies') {
             steps {
-                bat "npm install"
+                bat 'npm install'
             }
         }
-        stage("Test") {
+        stage('Test') {
             parallel {
-                stage("Run audit tests") {
-                    bat "npm audit"
+                stage('Run audit tests') {
+                    bat 'npm audit'
                 }
-                stage("Run tests") {
-                    bat "npm test"
+                stage('Run tests') {
+                    bat 'npm test'
                 }
             }
         }
